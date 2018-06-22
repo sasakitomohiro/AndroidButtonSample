@@ -21,8 +21,12 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setActivityMain(this);
 
+        // implements onClick()
 //        Button button = (Button) findViewById(R.id.button);
 //        button.setOnClickListener(this);
+
+        // basic
+//        Button button = (Button) findViewById(R.id.button);
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
 
+    // second
 //    @Override
 //    public void onClick(View view) {
 //        switch (view.getId()) {
