@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable name="activityMain" type="t0mat0ts.com.buttonsample.MainActivity"/>
+        <variable name="sampleBtn" type="t0mat0ts.com.buttonsample.SampleBtn"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:orientation="vertical"
@@ -19,7 +19,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:onClick="@{() -> activityMain.button()}"
+            android:onClick="@{() -> sampleBtn.onClickButton()}"
             android:text="Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
