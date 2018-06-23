@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         // data binding
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setActivityMain(this);
+        SampleBtn sampleBtn = new SampleBtn();
+        binding.setSampleBtn(sampleBtn);
 
         // implements onClick()
 //        Button button = (Button) findViewById(R.id.button);
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-    public void button() {
-        Log.e("button", "clicked");
-    }
+//    public void button() {
+//        Log.e("button", "clicked");
+//    }
 }
