@@ -7,7 +7,6 @@ public class SampleBtn {
     private Listener listener;
 
     public void onClickButton() {
-        Log.e("button", "clicked");
         if (listener != null) {
             listener.onClickButton();
         }
