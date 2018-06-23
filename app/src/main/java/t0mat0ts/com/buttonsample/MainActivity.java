@@ -1,52 +1,43 @@
 package t0mat0ts.com.buttonsample;
 
-import android.databinding.DataBindingUtil;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import t0mat0ts.com.buttonsample.databinding.ActivityMainBinding;
-
-public class MainActivity extends AppCompatActivity {
-//        implements View.OnClickListener
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
-        // data binding
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        SampleBtn sampleBtn = new SampleBtn();
-        binding.setSampleBtn(sampleBtn);
+        intent = new Intent(this, DataBindingButtonActivity.class);
+        Button button1 = (Button) findViewById(R.id.button);
+        Button button2 = (Button) findViewById(R.id.button2);
 
-        // implements onClick()
-//        Button button = (Button) findViewById(R.id.button);
-//        button.setOnClickListener(this);
-
-        // basic
-//        Button button = (Button) findViewById(R.id.button);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.e("button", "clicked");
-//            }
-//        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+            }
+        });
+        button2.setOnClickListener(this);
     }
 
-    // second
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.button:
-//                Log.e("button", "clicked");
-//                break;
-//        }
-//    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finish();
+    }
 
-//    public void button() {
-//        Log.e("button", "clicked");
-//    }
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.button2) {
+            startActivity(intent);
+        }
+    }
 }
